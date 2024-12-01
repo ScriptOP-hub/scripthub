@@ -1,0 +1,61 @@
+-- Obfuscated Script to Create GUI with Dupe Visual Effect
+
+local _0x2fa3 = Instance.new
+local _0x4c59 = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local _0x497a = _0x2fa3("ScreenGui")
+_0x497a.Parent = _0x4c59
+
+local _0x5f0b = _0x2fa3("Frame")
+_0x5f0b.Size = UDim2.new(0, 400, 0, 200)
+_0x5f0b.Position = UDim2.new(0.5, -200, 0.5, -100)
+_0x5f0b.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+_0x5f0b.BackgroundTransparency = 0.5
+_0x5f0b.Parent = _0x497a
+
+local _0x9f7c = _0x2fa3("TextLabel")
+_0x9f7c.Size = UDim2.new(1, 0, 0.5, 0)
+_0x9f7c.Position = UDim2.new(0, 0, 0, 0)
+_0x9f7c.Text = "while (true) do\n  -- Duplication Code\n  duplicate(item)\nend"
+_0x9f7c.TextColor3 = Color3.fromRGB(0, 255, 255)
+_0x9f7c.Font = Enum.Font.SourceSans
+_0x9f7c.TextSize = 30
+_0x9f7c.TextStrokeTransparency = 0.8
+_0x9f7c.TextTransparency = 0.2
+_0x9f7c.TextScaled = true
+_0x9f7c.BackgroundTransparency = 1
+_0x9f7c.Parent = _0x5f0b
+
+local _0x4a9b = game:GetService("TweenService")
+local _0x5987 = _0x2fa3("Frame")
+
+local _0x7306 = function()
+    local _0x5a3d = _0x2fa3("Frame")
+    _0x5a3d.Size = UDim2.new(1, 0, 1, 0)
+    _0x5a3d.Position = UDim2.new(0, 0, 0, 0)
+    _0x5a3d.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
+    _0x5a3d.BackgroundTransparency = 0.7
+    _0x5a3d.ZIndex = 1
+    _0x5a3d.Parent = _0x5f0b
+
+    local _0x1e6f = {Size = UDim2.new(1.2, 0, 1.2, 0)}
+    local _0x3e67 = TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1, true)
+    local _0x73d9 = _0x4a9b:Create(_0x5a3d, _0x3e67, _0x1e6f)
+    _0x73d9:Play()
+end
+
+local _0x3eac = _0x2fa3("TextButton")
+_0x3eac.Size = UDim2.new(0, 200, 0, 50)
+_0x3eac.Position = UDim2.new(0.5, -100, 0.75, -25)
+_0x3eac.Text = "Activate Dupe"
+_0x3eac.TextColor3 = Color3.fromRGB(255, 255, 255)
+_0x3eac.Font = Enum.Font.SourceSans
+_0x3eac.TextSize = 24
+_0x3eac.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+_0x3eac.TextStrokeTransparency = 0.7
+_0x3eac.BackgroundTransparency = 0.2
+_0x3eac.Parent = _0x497a
+
+_0x3eac.MouseButton1Click:Connect(function()
+    _0x7306()
+    _0x9f7c.Text = "Duplicating item...\n-- Duplication in progress..."
+end)
